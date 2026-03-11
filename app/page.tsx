@@ -7,6 +7,7 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
+  console.log("[v0] Page component rendering");
   return (
     <>
       <Navbar />
