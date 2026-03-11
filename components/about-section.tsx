@@ -36,20 +36,16 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I&apos;m a passionate developer who recently graduated from DAM (Desarrollo de Aplicaciones Multiplataforma) 
-              in Spain. My journey into programming started with curiosity about how apps work, and it quickly 
-              turned into a deep passion for creating elegant solutions.
+              {"I'm a passionate developer who recently graduated from DAM (Desarrollo de Aplicaciones Multiplataforma) in Spain. My journey into programming started with curiosity about how apps work, and it quickly turned into a deep passion for creating elegant solutions."}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I specialize in building full-stack web applications using <span className="text-primary font-medium">React</span> and 
-              <span className="text-primary font-medium"> Spring Boot</span>, as well as cross-platform mobile apps with 
-              <span className="text-primary font-medium"> Flutter</span>. I love the entire process of turning ideas into 
+              I specialize in building full-stack web applications using <span className="text-primary font-medium">React</span> and
+              <span className="text-primary font-medium"> Spring Boot</span>, as well as cross-platform mobile apps with
+              <span className="text-primary font-medium"> Flutter</span>. I love the entire process of turning ideas into
               functional, beautiful products.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source projects, 
-              or improving my skills through online courses and side projects. I&apos;m actively seeking opportunities 
-              where I can grow as a developer and contribute to meaningful projects.
+              {"When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or improving my skills through online courses and side projects. I'm actively seeking opportunities where I can grow as a developer and contribute to meaningful projects."}
             </p>
           </div>
 

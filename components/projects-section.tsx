@@ -33,18 +33,21 @@ const projects = [
     description: "Real-time weather application with location-based forecasts, interactive maps, and severe weather alerts.",
     tags: ["React", "TypeScript", "API Integration"],
     github: "#",
+    featured: false,
   },
   {
     title: "Recipe Finder App",
     description: "Mobile app for discovering recipes based on available ingredients with nutritional information and meal planning.",
     tags: ["Flutter", "Dart", "REST API"],
     github: "#",
+    featured: false,
   },
   {
     title: "Portfolio Website",
     description: "Personal portfolio website showcasing projects and skills. Built with modern web technologies and responsive design.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "#",
+    featured: false,
   },
 ];
 

@@ -27,13 +27,11 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-4xl mx-auto text-center">
-        <p className="text-primary font-medium mb-2">Let&apos;s Connect</p>
+        <p className="text-primary font-medium mb-2">{"Let's Connect"}</p>
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">Get In Touch</h2>
         
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-          I&apos;m currently looking for new opportunities and my inbox is always open. 
-          Whether you have a question, a project idea, or just want to say hi, 
-          I&apos;ll do my best to get back to you!
+          {"I'm currently looking for new opportunities and my inbox is always open. Whether you have a question, a project idea, or just want to say hi, I'll do my best to get back to you!"}
         </p>
 
         <div className="flex items-center justify-center gap-2 text-muted-foreground mb-12">

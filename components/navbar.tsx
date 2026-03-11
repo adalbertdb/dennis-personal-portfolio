@@ -55,8 +55,8 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Button asChild>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
+            <a href="#contact">
+              Contact
             </a>
           </Button>
         </div>
@@ -90,8 +90,8 @@ export function Navbar() {
             ))}
             <li>
               <Button asChild className="w-full">
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                  Resume
+                <a href="#contact">
+                  Contact
                 </a>
               </Button>
             </li>
