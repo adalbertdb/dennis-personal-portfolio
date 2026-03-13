@@ -1,6 +1,6 @@
 'use client'
 
-// Inspired by react-hot-toast library
+// Inspired by vue-hot-toast library
 import * as React from 'react'
 
 import type { ToastActionElement, ToastProps } from '@/components/ui/toast'
@@ -169,9 +169,9 @@ function toast({ ...props }: Toast) {
 }
 
 function useToast() {
-  const [state, setState] = React.useState<State>(memoryState)
+  const [state, setState] = vue.useState<State>(memoryState)
 
-  React.useEffect(() => {
+  vue.useEffect(() => {
     listeners.push(setState)
     return () => {
       const index = listeners.indexOf(setState)

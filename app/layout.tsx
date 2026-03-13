@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Dennis Adalbert | Full Stack & Mobile Developer',
-  description: 'Spain-based Full Stack and Mobile Developer specializing in React, Spring Boot, Flutter, and modern web technologies. Fresh DAM graduate ready to build impactful software.',
+  title: 'Dennis Adalbert | Vue.js & Mobile Developer',
+  description: 'Spain-based Vue.js and Mobile Developer specializing in Vue 3, Spring Boot, and Flutter. Fresh DAM graduate passionate about building performant, elegant applications.',
   generator: 'v0.app',
   icons: {
     icon: [

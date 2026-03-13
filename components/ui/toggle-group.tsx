@@ -7,7 +7,7 @@ import { type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 import { toggleVariants } from '@/components/ui/toggle'
 
-const ToggleGroupContext = React.createContext<
+const ToggleGroupContext = vue.createContext<
   VariantProps<typeof toggleVariants>
 >({
   size: 'default',
@@ -20,7 +20,7 @@ function ToggleGroup({
   size,
   children,
   ...props
-}: React.ComponentProps<typeof ToggleGroupPrimitive.Root> &
+}: vue.ComponentProps<typeof ToggleGroupPrimitive.Root> &
   VariantProps<typeof toggleVariants>) {
   return (
     <ToggleGroupPrimitive.Root
@@ -46,9 +46,9 @@ function ToggleGroupItem({
   variant,
   size,
   ...props
-}: React.ComponentProps<typeof ToggleGroupPrimitive.Item> &
+}: vue.ComponentProps<typeof ToggleGroupPrimitive.Item> &
   VariantProps<typeof toggleVariants>) {
-  const context = React.useContext(ToggleGroupContext)
+  const context = vue.useContext(ToggleGroupContext)
 
   return (
     <ToggleGroupPrimitive.Item

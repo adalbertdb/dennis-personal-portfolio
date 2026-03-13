@@ -31,12 +31,12 @@ export function HeroSection() {
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
-          Full Stack & Mobile Developer
+          Vue.js & Mobile Developer
         </p>
-        
+
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed text-pretty">
-          Recent DAM graduate from Spain passionate about building elegant, performant applications. 
-          I specialize in React, Spring Boot, and Flutter to create seamless experiences across web and mobile.
+          Recent DAM graduate from Spain passionate about building elegant, performant applications.
+          I specialize in Vue.js, Spring Boot, and Flutter to create seamless experiences across web and mobile.
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">

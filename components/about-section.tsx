@@ -39,7 +39,7 @@ export function AboutSection() {
               {"I'm a passionate developer who recently graduated from DAM (Desarrollo de Aplicaciones Multiplataforma) in Spain. My journey into programming started with curiosity about how apps work, and it quickly turned into a deep passion for creating elegant solutions."}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I specialize in building full-stack web applications using <span className="text-primary font-medium">React</span> and
+              I specialize in building full-stack web applications using <span className="text-primary font-medium">Vue.js</span> and
               <span className="text-primary font-medium"> Spring Boot</span>, as well as cross-platform mobile apps with
               <span className="text-primary font-medium"> Flutter</span>. I love the entire process of turning ideas into
               functional, beautiful products.

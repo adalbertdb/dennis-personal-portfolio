@@ -11,7 +11,7 @@ const THEMES = { light: '', dark: '.dark' } as const
 export type ChartConfig = {
   [k in string]: {
     label?: React.ReactNode
-    icon?: React.ComponentType
+    icon?: vue.ComponentType
   } & (
     | { color?: string; theme?: never }
     | { color?: never; theme: Record<keyof typeof THEMES, string> }
@@ -22,10 +22,10 @@ type ChartContextProps = {
   config: ChartConfig
 }
 
-const ChartContext = React.createContext<ChartContextProps | null>(null)
+const ChartContext = vue.createContext<ChartContextProps | null>(null)
 
 function useChart() {
-  const context = React.useContext(ChartContext)
+  const context = vue.useContext(ChartContext)
 
   if (!context) {
     throw new Error('useChart must be used within a <ChartContainer />')
@@ -40,13 +40,13 @@ function ChartContainer({
   children,
   config,
   ...props
-}: React.ComponentProps<'div'> & {
+}: vue.ComponentProps<'div'> & {
   config: ChartConfig
-  children: React.ComponentProps<
+  children: vue.ComponentProps<
     typeof RechartsPrimitive.ResponsiveContainer
   >['children']
 }) {
-  const uniqueId = React.useId()
+  const uniqueId = vue.useId()
   const chartId = `chart-${id || uniqueId.replace(/:/g, '')}`
 
   return (
@@ -118,8 +118,8 @@ function ChartTooltipContent({
   color,
   nameKey,
   labelKey,
-}: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
-  React.ComponentProps<'div'> & {
+}: vue.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+  vue.ComponentProps<'div'> & {
     hideLabel?: boolean
     hideIndicator?: boolean
     indicator?: 'line' | 'dot' | 'dashed'
@@ -128,7 +128,7 @@ function ChartTooltipContent({
   }) {
   const { config } = useChart()
 
-  const tooltipLabel = React.useMemo(() => {
+  const tooltipLabel = vue.useMemo(() => {
     if (hideLabel || !payload?.length) {
       return null
     }
@@ -215,7 +215,7 @@ function ChartTooltipContent({
                           {
                             '--color-bg': indicatorColor,
                             '--color-border': indicatorColor,
-                          } as React.CSSProperties
+                          } as vue.CSSProperties
                         }
                       />
                     )
@@ -256,7 +256,7 @@ function ChartLegendContent({
   payload,
   verticalAlign = 'bottom',
   nameKey,
-}: React.ComponentProps<'div'> &
+}: vue.ComponentProps<'div'> &
   Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
     hideIcon?: boolean
     nameKey?: string

@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const skills = [
   {
     category: "Frontend",
-    items: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS"],
+    items: ["Vue.js 3", "Composition API", "Pinia", "Vue Router", "TypeScript", "Tailwind CSS"],
   },
   {
     category: "Backend",
@@ -11,11 +11,11 @@ const skills = [
   },
   {
     category: "Mobile",
-    items: ["Flutter", "Dart", "Android", "Cross-Platform", "Mobile UI"],
+    items: ["Flutter", "Dart", "Android", "Cross-Platform"],
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "VS Code", "IntelliJ", "Figma"],
+    items: ["Git", "GitHub", "IntelliJ", "VS Code", "Figma"],
   },
 ];
 

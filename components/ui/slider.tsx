@@ -12,8 +12,8 @@ function Slider({
   min = 0,
   max = 100,
   ...props
-}: React.ComponentProps<typeof SliderPrimitive.Root>) {
-  const _values = React.useMemo(
+}: vue.ComponentProps<typeof SliderPrimitive.Root>) {
+  const _values = vue.useMemo(
     () =>
       Array.isArray(value)
         ? value
