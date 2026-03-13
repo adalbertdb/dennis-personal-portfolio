@@ -10,23 +10,8 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Dennis Adalbert | Vue.js & Mobile Developer',
   description: 'Spain-based Vue.js and Mobile Developer specializing in Vue 3, Spring Boot, and Flutter. Fresh DAM graduate passionate about building performant, elegant applications.',
-  generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.ico',
   },
 }
 
