@@ -6,20 +6,20 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@dennisadalbert.dev",
-    href: "mailto:hello@dennisadalbert.dev",
+    value: "dbadalbert@gmail.com",
+    href: "mailto:dbadalbert@gmail.com",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/dennisadalbert",
-    href: "https://linkedin.com",
+    value: "linkedin.com/in/dennis-adalbert-boghean",
+    href: "https://www.linkedin.com/in/dennis-adalbert-boghean-5413582b8/",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/dennisadalbert",
-    href: "https://github.com",
+    value: "github.com/adalbertdb",
+    href: "https://github.com/adalbertdb",
   },
 ];
 
@@ -59,7 +59,7 @@ export function ContactSection() {
         </div>
 
         <Button size="lg" asChild>
-          <a href="mailto:hello@dennisadalbert.dev">
+          <a href="mailto:dbadalbert@gmail.com">
             Say Hello
           </a>
         </Button>
