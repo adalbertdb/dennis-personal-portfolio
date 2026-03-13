@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/lib/use-language";
 
 const skills = [
   {
@@ -15,22 +18,27 @@ const skills = [
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "IntelliJ", "VS Code", "Figma"],
+    items: ["Git", "GitHub", "IntelliJ", "VS Code", "Claude Code"],
   },
 ];
 
 export function SkillsSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary font-medium mb-2">What I Work With</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-balance">Technical Skills</h2>
+          <p className="text-primary font-medium mb-2">{t.skills.label}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-balance">{t.skills.title}</h2>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((skill) => (
-            <Card key={skill.category} className="bg-card/50 border-border hover:border-primary/50 transition-colors">
+            <Card
+              key={skill.category}
+              className="bg-card/50 border-border hover:border-primary/50 transition-colors"
+            >
               <CardContent className="pt-6">
                 <h3 className="text-lg font-semibold mb-4 text-primary">{skill.category}</h3>
                 <ul className="space-y-2">

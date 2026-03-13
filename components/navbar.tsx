@@ -2,28 +2,29 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/use-language";
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
+const navHrefs = ["#about", "#skills", "#projects", "#contact"];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { lang, t, toggleLang } = useLanguage();
 
   useEffect(() => {
-    const handleScroll = () => {
+    function handleScroll() {
       setIsScrolled(window.scrollY > 50);
-    };
-
+    }
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = t.navbar.links.map((label, i) => ({
+    label,
+    href: navHrefs[i],
+  }));
 
   return (
     <header
@@ -53,24 +54,44 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-secondary/50"
+            aria-label="Toggle language"
+          >
+            <Globe className="h-4 w-4" />
+            <span className="font-medium">{lang === "en" ? "ES" : "EN"}</span>
+          </button>
           <Button asChild>
-            <a href="#contact">
-              Contact
-            </a>
+            <a href="#contact">{t.navbar.cta}</a>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-md"
+            aria-label="Toggle language"
+          >
+            <Globe className="h-4 w-4" />
+            <span className="font-medium">{lang === "en" ? "ES" : "EN"}</span>
+          </button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
+        </div>
       </nav>
 
       {/* Mobile Navigation */}
@@ -90,9 +111,7 @@ export function Navbar() {
             ))}
             <li>
               <Button asChild className="w-full">
-                <a href="#contact">
-                  Contact
-                </a>
+                <a href="#contact">{t.navbar.cta}</a>
               </Button>
             </li>
           </ul>
