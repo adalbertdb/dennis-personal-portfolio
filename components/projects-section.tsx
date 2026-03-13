@@ -151,7 +151,7 @@ export function ProjectsSection() {
 
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="gap-2">
+            <a href="https://github.com/adalbertdb" target="_blank" rel="noopener noreferrer" className="gap-2">
               <Github className="h-4 w-4" />
               See More on GitHub
             </a>
