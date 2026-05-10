@@ -1,52 +1,45 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/use-language";
 
-const navHrefs = ["#about", "#skills", "#projects", "#contact"];
+const navHrefs = ["#projects", "#about", "#skills", "#contact"];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   const { lang, t, toggleLang } = useLanguage();
 
   useEffect(() => {
-    function handleScroll() {
-      setIsScrolled(window.scrollY > 50);
-    }
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navLinks = t.navbar.links.map((label, i) => ({
-    label,
-    href: navHrefs[i],
-  }));
+  const links = t.navbar.links.map((label, i) => ({ label, href: navHrefs[i] }));
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
-      )}
+      className="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+      style={{
+        background: scrolled ? "rgba(10,10,10,0.85)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
+      }}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-primary">
-          DA
-        </a>
 
-        {/* Desktop Navigation */}
+        {/* Spacer left (keeps links centered on desktop) */}
+        <div className="w-24" />
+
+        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="font-heading text-sm font-medium text-white/40 hover:text-white transition-colors duration-200 cursor-pointer tracking-tight"
               >
                 {link.label}
               </a>
@@ -54,67 +47,81 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center gap-3">
-          {/* Language toggle */}
+        {/* Desktop right */}
+        <div className="hidden md:flex items-center gap-4">
           <button
             onClick={toggleLang}
-            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-secondary/50"
+            className="flex items-center gap-1.5 text-xs font-heading font-semibold text-white/40 hover:text-white transition-colors duration-200 cursor-pointer tracking-widest uppercase"
             aria-label="Toggle language"
           >
-            <Globe className="h-4 w-4" />
-            <span className="font-medium">{lang === "en" ? "ES" : "EN"}</span>
+            <Globe className="w-3.5 h-3.5" />
+            {lang === "en" ? "ES" : "EN"}
           </button>
-          <Button asChild>
-            <a href="#contact">{t.navbar.cta}</a>
-          </Button>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center px-4 py-2 rounded-full text-xs font-heading font-semibold text-white transition-all duration-200 cursor-pointer"
+            style={{
+              background: "linear-gradient(135deg, #7DD3FC, #C084FC, #F472B6)",
+              boxShadow: "0 0 20px rgba(192,132,252,0.25)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(192,132,252,0.45)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(192,132,252,0.25)";
+            }}
+          >
+            {t.navbar.cta}
+          </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-2">
+        {/* Mobile */}
+        <div className="md:hidden flex items-center gap-3">
           <button
             onClick={toggleLang}
-            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors px-2 py-1 rounded-md"
-            aria-label="Toggle language"
+            className="text-xs font-heading font-semibold text-white/40 hover:text-white transition-colors uppercase tracking-widest cursor-pointer"
           >
-            <Globe className="h-4 w-4" />
-            <span className="font-medium">{lang === "en" ? "ES" : "EN"}</span>
+            {lang === "en" ? "ES" : "EN"}
           </button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMobileMenuOpen((v) => !v)}
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="text-white/50 hover:text-white transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
-          <ul className="flex flex-col px-6 py-4 gap-4">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="block text-muted-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li>
-              <Button asChild className="w-full">
-                <a href="#contact">{t.navbar.cta}</a>
-              </Button>
-            </li>
-          </ul>
+      {/* Mobile menu */}
+      {open && (
+        <div
+          className="md:hidden px-6 py-5 space-y-4 border-t"
+          style={{
+            background: "rgba(10,10,10,0.97)",
+            backdropFilter: "blur(20px)",
+            borderColor: "rgba(255,255,255,0.06)",
+          }}
+        >
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="block font-heading text-sm font-medium text-white/50 hover:text-white transition-colors cursor-pointer"
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            className="block w-full text-center px-4 py-2.5 rounded-full text-sm font-heading font-semibold text-white"
+            style={{ background: "linear-gradient(135deg, #7DD3FC, #C084FC, #F472B6)" }}
+            onClick={() => setOpen(false)}
+          >
+            {t.navbar.cta}
+          </a>
         </div>
       )}
     </header>

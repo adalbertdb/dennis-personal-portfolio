@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     navbar: {
-      links: ["About", "Skills", "Projects", "Contact"],
+      links: ["Projects", "About", "Skills", "Contact"],
       cta: "Contact",
     },
     hero: {
@@ -62,7 +62,7 @@ export const translations = {
   },
   es: {
     navbar: {
-      links: ["Sobre mí", "Habilidades", "Proyectos", "Contacto"],
+      links: ["Proyectos", "Sobre mí", "Habilidades", "Contacto"],
       cta: "Contacto",
     },
     hero: {
