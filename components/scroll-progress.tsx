@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const CHAPTERS = [
-  { id: "hero",     label: "Intro" },
-  { id: "projects", label: "Work" },
-  { id: "about",    label: "About" },
-  { id: "skills",   label: "Stack" },
-  { id: "contact",  label: "Contact" },
+  { id: "hero", label: "Intro", targetId: "hero" },
+  { id: "projects", label: "Work", targetId: "projects-heading" },
+  { id: "about", label: "About", targetId: "about-heading" },
+  { id: "skills", label: "Stack", targetId: "skills-heading" },
+  { id: "contact", label: "Contact", targetId: "contact-heading" },
 ];
 
 export function ScrollProgress() {
@@ -54,10 +54,10 @@ export function ScrollProgress() {
 
       {/* Chapter dots */}
       <div className="flex flex-col items-center gap-4">
-        {CHAPTERS.map(({ id, label }) => (
+        {CHAPTERS.map(({ id, label, targetId }) => (
           <a
             key={id}
-            href={`#${id}`}
+            href={`#${targetId}`}
             aria-label={label}
             className="group relative flex items-center"
           >

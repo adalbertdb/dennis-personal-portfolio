@@ -20,8 +20,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Dennis Adalbert | Vue.js & Mobile Developer',
-  description: 'Spain-based Vue.js and Mobile Developer specializing in Vue 3, Spring Boot, and Flutter. Fresh DAM graduate passionate about building performant, elegant applications.',
+  title: 'Dennis Adalbert | Desarrollador Mobile & Fullstack · Flutter & Node.js',
+  description: 'Desarrollador mobile y fullstack, Técnico Superior en DAM, de la provincia de Valencia. Construyo apps en Flutter y servicios backend con Node.js y Supabase. Disponible para trabajar.',
   icons: {
     icon: '/favicon.ico',
   },

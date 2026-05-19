@@ -62,7 +62,7 @@ export function SkillsSection() {
       <div className="max-w-6xl mx-auto" ref={containerRef as React.RefObject<HTMLDivElement>}>
 
         {/* Header */}
-        <div className="reveal mb-16">
+        <div id="skills-heading" className="reveal mb-16">
           <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: "rgba(255,255,255,0.25)" }}>
             Chapter 04 — {t.skills.label}
           </p>
@@ -84,7 +84,7 @@ export function SkillsSection() {
               style={{ borderColor: "rgba(255,255,255,0.05)" }}
             >
               {/* Index + category — fixed width column */}
-              <div className="flex items-center gap-4 sm:w-48 flex-shrink-0">
+              <div className="flex items-center gap-4 sm:w-48 shrink-0">
                 <span
                   className="font-heading font-bold text-xs tabular-nums"
                   style={{ color: "rgba(255,255,255,0.15)" }}

@@ -61,6 +61,7 @@ export function ContactSection() {
 
         {/* Header — left aligned */}
         <div
+          id="contact-heading"
           ref={headingRef as React.RefObject<HTMLDivElement>}
           className="reveal mb-16"
         >

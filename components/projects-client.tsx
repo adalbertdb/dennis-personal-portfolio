@@ -54,7 +54,7 @@ export function ProjectsClient({ repos }: ProjectsClientProps) {
       <div className="max-w-6xl mx-auto" ref={containerRef as React.RefObject<HTMLDivElement>}>
 
         {/* Section header — left aligned, editorial */}
-        <div className="reveal mb-16 flex flex-col gap-3">
+        <div id="projects-heading" className="reveal mb-16 flex flex-col gap-3">
           <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "rgba(255,255,255,0.25)" }}>
             Chapter 02 — {t.projects.label}
           </p>
@@ -149,7 +149,7 @@ export function ProjectsClient({ repos }: ProjectsClientProps) {
                     {repo.primaryLanguage && (
                       <span className="flex items-center gap-1.5">
                         <span
-                          className="w-2 h-2 rounded-full flex-shrink-0"
+                          className="w-2 h-2 rounded-full shrink-0"
                           style={{ backgroundColor: repo.primaryLanguage.color ?? "#888" }}
                         />
                         {repo.primaryLanguage.name}
@@ -174,18 +174,6 @@ export function ProjectsClient({ repos }: ProjectsClientProps) {
           </div>
         )}
 
-        {/* GitHub CTA */}
-        <div className="reveal reveal-delay-4 mt-12 flex justify-start">
-          <a
-            href="https://github.com/adalbertdb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-white/30 hover:text-white transition-colors duration-200 cursor-pointer"
-          >
-            <Github className="w-4 h-4" />
-            {t.projects.github} →
-          </a>
-        </div>
       </div>
     </section>
   );
