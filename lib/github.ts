@@ -38,38 +38,43 @@ const PINNED_REPOS_QUERY = `
 `
 
 export async function getPinnedRepos(): Promise<PinnedRepo[]> {
-  const token = process.env.GITHUB_TOKEN
+  const token = process.env.GITHUB_TOKEN?.trim()
 
   if (!token) {
-    console.warn("GITHUB_TOKEN not set — skipping GitHub fetch")
+    console.error("GITHUB_TOKEN not set — pinned repositories unavailable")
     return []
   }
 
-  const res = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      Authorization: `bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ query: PINNED_REPOS_QUERY }),
-    next: { revalidate: 86400 },
-  })
+  try {
+    const res = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: PINNED_REPOS_QUERY }),
+      next: { revalidate: 86400 },
+    })
 
-  if (!res.ok) {
-    console.error(`GitHub API error: ${res.status}`)
+    const json = await res.json()
+    if (!res.ok || json.errors?.length) {
+      console.error(`GitHub API error: ${res.status}`, json.errors)
+      return []
+    }
+
+    const nodes = json?.data?.user?.pinnedItems?.nodes ?? []
+
+    return nodes.map((repo: any) => ({
+      name: repo.name,
+      description: repo.description,
+      url: repo.url,
+      stargazerCount: repo.stargazerCount,
+      forkCount: repo.forkCount,
+      primaryLanguage: repo.primaryLanguage ?? null,
+      topics: repo.repositoryTopics?.nodes?.map((n: any) => n.topic.name) ?? [],
+    }))
+  } catch (error) {
+    console.error("GitHub fetch failed", error)
     return []
   }
-
-  const json = await res.json()
-  const nodes = json?.data?.user?.pinnedItems?.nodes ?? []
-
-  return nodes.map((repo: any) => ({
-    name: repo.name,
-    description: repo.description,
-    url: repo.url,
-    stargazerCount: repo.stargazerCount,
-    forkCount: repo.forkCount,
-    primaryLanguage: repo.primaryLanguage ?? null,
-    topics: repo.repositoryTopics.nodes.map((n: any) => n.topic.name),
-  }))
 }

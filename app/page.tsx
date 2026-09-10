@@ -7,6 +7,8 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <>
