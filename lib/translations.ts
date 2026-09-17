@@ -16,7 +16,7 @@ export const translations = {
     about: {
       label: "About",
       title: "About Me",
-      p1: "I'm based in the Valencia region and just finished a higher technical degree in software development. While studying, I built Aparcaloo — a collaborative parking app in Flutter and Supabase that already has 75 people signed up before launch.",
+      p1: "I'm based in the Valencia region and just finished a higher technical degree in software development. While studying, I built Aparcaloo — a collaborative parking app in Flutter and Supabase with 100+ people on its pre-launch waitlist.",
       p2: "My main stack is Flutter and Dart for mobile, Node.js for the backend, and PostgreSQL as my go-to data layer. I've also worked with Vue.js and picked up Rust on a small personal project. I choose tools based on what the project needs.",
       p3: "What drives me is trying to solve real problems — not just building things for the sake of it. I'm looking for a team where I can contribute from day one, ideally on mobile or full-stack projects.",
       cards: [
@@ -34,7 +34,7 @@ export const translations = {
         },
         {
           title: "Aparcaloo",
-          desc: "Collaborative parking app — 75 sign-ups before launch",
+          desc: "Collaborative parking app — 100+ on the pre-launch waitlist",
         },
       ],
     },
@@ -77,7 +77,7 @@ export const translations = {
     about: {
       label: "Sobre mí",
       title: "Sobre mí",
-      p1: "Vivo en la provincia de Valencia y acabo de terminar el CFGS de DAM. Mientras estudiaba, construí Aparcaloo — una app colaborativa de aparcamiento en Flutter y PostgreSQL que ya tiene 75 personas apuntadas antes de lanzar.",
+      p1: "Vivo en la provincia de Valencia y acabo de terminar el CFGS de DAM. Mientras estudiaba, construí Aparcaloo — una app colaborativa de aparcamiento en Flutter y PostgreSQL con más de 100 personas en la lista de espera previa al lanzamiento.",
       p2: "Mi stack principal es Flutter y Dart para mobile, Node.js para el backend, y PostgreSQL como capa de datos. También he trabajado con Vue.js y tocado Rust en un proyecto personal. Elijo las herramientas según lo que necesita el proyecto.",
       p3: "Lo que me mueve es intentar resolver problemas reales, no construir cosas por construirlas. Busco un equipo donde pueda aportar desde el primer día, idealmente en proyectos mobile o full-stack.",
       cards: [
@@ -95,7 +95,7 @@ export const translations = {
         },
         {
           title: "Aparcaloo",
-          desc: "App colaborativa de aparcamiento — 75 registros antes de lanzar",
+          desc: "App colaborativa de aparcamiento — más de 100 en la lista de espera",
         },
       ],
     },
