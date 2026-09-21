@@ -18,7 +18,7 @@ Single-page portfolio built with **Next.js** + **Vue 19** (JSX: `vue-jsx`). The 
 
 **Section order in `app/page.tsx`:**
 ```
-Navbar → HeroSection → AboutSection → SkillsSection → ProjectsSection → ContactSection → Footer
+Navbar → HeroSection → ProjectsSection → SkillsSection → ContactSection → Footer
 ```
 
 **Component layers:**
@@ -28,7 +28,7 @@ Navbar → HeroSection → AboutSection → SkillsSection → ProjectsSection �
 
 ## Styling
 
-**Tailwind CSS v4** with OKLch CSS variables defined in `app/globals.css`. Colors are referenced via Tailwind utilities mapped to CSS vars (`--background`, `--primary`, `--accent`, etc.). Dark mode is driven by the `.dark` class (next-themes).
+**Tailwind CSS v4** with the "Taller" tokens from the adalbertdb design system in `app/globals.css` (`--plate`, `--ink`, `--edge`, `--accent-y`, …; light "chapa" by default, dark "acero" via `prefers-color-scheme`). Utilities: `bg-plate`, `text-ink`, `border-edge`, `bg-yellow`, etc. Type/grid/material classes (`t-stamp`, `t-title`, `t-label`, `t-data`, `wrap`, `grid-12`, `mat`) live in `@layer components`. Fonts: Archivo (variable, `wdth` axis) + IBM Plex Mono. No radius, no shadows, no icon set; yellow only as painted planes.
 
 Path alias: `@/` → project root.
 

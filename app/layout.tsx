@@ -1,27 +1,27 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, DM_Sans } from 'next/font/google'
+import { Archivo, IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/use-language'
 import { SmoothScroll } from '@/components/smooth-scroll'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({
+const archivo = Archivo({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-heading',
+  axes: ['wdth'],
+  variable: '--font-archivo',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-body',
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Dennis Adalbert | Desarrollador Mobile & Fullstack · Flutter & Node.js',
-  description: 'Desarrollador mobile y fullstack, Técnico Superior en DAM, de la provincia de Valencia. Construyo apps en Flutter y servicios backend con Node.js y Supabase. Disponible para trabajar.',
+  title: 'Dennis Adalbert · Apps para humanos',
+  description: 'Builder de apps con foco en la calidad y la experiencia de usuario, de la base de datos a la interfaz. Gandía, Valencia. Disponible.',
   icons: {
     icon: '/favicon.ico',
   },
@@ -33,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
-      <body className="antialiased">
+    <html lang="es" className={`${archivo.variable} ${plexMono.variable}`}>
+      <body>
         <LanguageProvider>
           <SmoothScroll>
             {children}
