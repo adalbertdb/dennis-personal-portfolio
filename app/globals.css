@@ -130,6 +130,7 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
     }
   }
 }
@@ -221,5 +222,31 @@
   mix-blend-mode: overlay;
   background-size: 180px 180px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hero-metal,
+.project-metal {
+  background-image: linear-gradient(105deg, transparent 42%, rgb(255 255 255 / 16%) 50%, transparent 58%);
+  background-repeat: no-repeat;
+  background-size: 300% 100%;
+}
+.hero-metal {
+  background-position: 100% 0;
+  animation: metal-sweep 1.5s ease-out 0.2s both;
+}
+.project-metal {
+  background-position: 100% 0;
+  transition: background-position 0.65s ease, border-color 0.2s ease;
+}
+.project-metal:hover,
+.project-metal:focus-visible { background-position: 0 0; }
+
+@keyframes metal-sweep {
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-metal,
+  .project-metal { background-image: none; }
 }
 }

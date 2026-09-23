@@ -5,6 +5,8 @@ import Lenis from "lenis";
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const lenis = new Lenis({
       duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -12,12 +14,13 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       infinite: false,
     });
 
+    let id: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      id = requestAnimationFrame(raf);
     }
 
-    const id = requestAnimationFrame(raf);
+    id = requestAnimationFrame(raf);
 
     // Anchor links: let Lenis handle smooth scroll-to
     const handleClick = (e: MouseEvent) => {

@@ -6,7 +6,7 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="top" className="mat border-b-4 border-edge">
+    <section id="top" className="mat hero-metal border-b-4 border-edge">
       <div className="wrap pt-12 pb-24 md:pt-24">
         <p className="t-cond text-graphite mb-6">{t.hero.role}</p>
 

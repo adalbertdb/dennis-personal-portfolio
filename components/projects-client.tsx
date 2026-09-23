@@ -37,7 +37,7 @@ export function ProjectsClient({ repos }: { repos: PinnedRepo[] }) {
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-full flex flex-col gap-2 p-6 bg-plate-raised border-2 border-edge-soft hover:border-ink transition-colors"
+                  className="project-metal h-full flex flex-col gap-2 p-6 bg-plate-raised border-2 border-edge-soft hover:border-ink"
                 >
                   <span className="t-label text-graphite">{repo.primaryLanguage?.name ?? "—"}</span>
                   <h3 className="t-subtitle break-words">{repo.name}</h3>
