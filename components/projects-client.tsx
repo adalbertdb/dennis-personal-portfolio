@@ -25,11 +25,17 @@ export function ProjectsClient({ repos }: { repos: PinnedRepo[] }) {
           <p className="t-data text-graphite">{t.projects.empty}</p>
         ) : (
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <li className="h-full flex flex-col gap-2 p-6 bg-plate-raised border-2 border-edge-soft">
-              <span className="t-label text-graphite">{t.projects.featuredTag}</span>
-              <h3 className="t-subtitle">Aparcaloo</h3>
-              <p className="text-sm leading-5 text-cast flex-1">{t.projects.featuredDesc}</p>
-              <span className="t-data text-graphite mt-auto pt-2">Flutter · Supabase · {t.projects.waitlist}</span>
+            <li>
+              <a
+                href="https://aparcaloo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-metal h-full flex flex-col gap-2 p-6 bg-plate-raised border-2 border-edge-soft hover:border-ink"
+              >
+                <h3 className="t-subtitle">Aparcaloo</h3>
+                <p className="text-sm leading-5 text-cast flex-1">{t.projects.featuredDesc}</p>
+                <span className="t-data text-graphite mt-auto pt-2">Flutter · Supabase · {t.projects.waitlist} · ↗</span>
+              </a>
             </li>
             {repos.map((repo) => (
               <li key={repo.name}>

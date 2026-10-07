@@ -20,8 +20,8 @@ const plexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Dennis Adalbert · Apps para humanos',
-  description: 'Builder de apps con foco en la calidad y la experiencia de usuario, de la base de datos a la interfaz. Gandía, Valencia. Disponible.',
+  title: 'Dennis Adalbert · Desarrollador full-stack',
+  description: 'Construyo apps pensando en quien las usa: interfaces claras sobre código que aguanta, del backend al último píxel. Gandía, Valencia. Disponible.',
   icons: {
     icon: '/favicon.ico',
   },

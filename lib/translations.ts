@@ -4,8 +4,8 @@ export const translations = {
       links: ["Work", "Stack", "Contact"],
     },
     hero: {
-      role: "Builder · Apps for humans",
-      line: "I build apps people enjoy using. Solid code on the inside, clear experience on the outside, from the database to the last detail of the interface. Looking for a team.",
+      role: "Full-stack developer",
+      line: "I build apps with the person using them in mind: clear, fast, frictionless interfaces on top of code that holds up. From the backend to the last pixel. Looking for a team.",
       btnWork: "See work",
       btnContact: "Write to me",
       spec: [
@@ -18,7 +18,6 @@ export const translations = {
     },
     projects: {
       title: "Work",
-      featuredTag: "Paused",
       featuredDesc: "Collaborative parking app.",
       waitlist: "100+ on the waitlist",
       empty: "No pinned repositories found.",
@@ -38,8 +37,8 @@ export const translations = {
       links: ["Trabajo", "Stack", "Contacto"],
     },
     hero: {
-      role: "Builder · Apps para humanos",
-      line: "Construyo apps que da gusto usar. Código sólido por dentro, experiencia clara por fuera, de la base de datos al último detalle de la interfaz. Busco equipo.",
+      role: "Desarrollador full-stack",
+      line: "Construyo apps pensando primero en quien las va a usar: interfaces claras, rápidas y sin fricción, sobre un código que aguanta. Del backend al último píxel. Busco equipo.",
       btnWork: "Ver trabajo",
       btnContact: "Escríbeme",
       spec: [
@@ -52,7 +51,6 @@ export const translations = {
     },
     projects: {
       title: "Trabajo",
-      featuredTag: "En pausa",
       featuredDesc: "App colaborativa de aparcamiento.",
       waitlist: "100+ en lista de espera",
       empty: "No se encontraron repositorios destacados.",
