@@ -7,13 +7,13 @@ import { cn } from '@/lib/utils'
 
 function HoverCard({
   ...props
-}: vue.ComponentProps<typeof HoverCardPrimitive.Root>) {
+}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {
   return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />
 }
 
 function HoverCardTrigger({
   ...props
-}: vue.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
+}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
   return (
     <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
   )
@@ -24,7 +24,7 @@ function HoverCardContent({
   align = 'center',
   sideOffset = 4,
   ...props
-}: vue.ComponentProps<typeof HoverCardPrimitive.Content>) {
+}: React.ComponentProps<typeof HoverCardPrimitive.Content>) {
   return (
     <HoverCardPrimitive.Portal data-slot="hover-card-portal">
       <HoverCardPrimitive.Content

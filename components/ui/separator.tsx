@@ -10,7 +10,7 @@ function Separator({
   orientation = 'horizontal',
   decorative = true,
   ...props
-}: vue.ComponentProps<typeof SeparatorPrimitive.Root>) {
+}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {
   return (
     <SeparatorPrimitive.Root
       data-slot="separator"

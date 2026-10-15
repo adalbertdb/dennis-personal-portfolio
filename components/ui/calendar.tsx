@@ -20,8 +20,8 @@ function Calendar({
   formatters,
   components,
   ...props
-}: vue.ComponentProps<typeof DayPicker> & {
-  buttonVariant?: vue.ComponentProps<typeof Button>['variant']
+}: React.ComponentProps<typeof DayPicker> & {
+  buttonVariant?: React.ComponentProps<typeof Button>['variant']
 }) {
   const defaultClassNames = getDefaultClassNames()
 
@@ -177,11 +177,11 @@ function CalendarDayButton({
   day,
   modifiers,
   ...props
-}: vue.ComponentProps<typeof DayButton>) {
+}: React.ComponentProps<typeof DayButton>) {
   const defaultClassNames = getDefaultClassNames()
 
-  const ref = vue.useRef<HTMLButtonElement>(null)
-  vue.useEffect(() => {
+  const ref = React.useRef<HTMLButtonElement>(null)
+  React.useEffect(() => {
     if (modifiers.focused) ref.current?.focus()
   }, [modifiers.focused])
 

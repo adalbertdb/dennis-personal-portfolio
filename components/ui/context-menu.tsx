@@ -8,13 +8,13 @@ import { cn } from '@/lib/utils'
 
 function ContextMenu({
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Root>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Root>) {
   return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />
 }
 
 function ContextMenuTrigger({
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Trigger>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Trigger>) {
   return (
     <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />
   )
@@ -22,7 +22,7 @@ function ContextMenuTrigger({
 
 function ContextMenuGroup({
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Group>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Group>) {
   return (
     <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />
   )
@@ -30,7 +30,7 @@ function ContextMenuGroup({
 
 function ContextMenuPortal({
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Portal>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Portal>) {
   return (
     <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />
   )
@@ -38,13 +38,13 @@ function ContextMenuPortal({
 
 function ContextMenuSub({
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Sub>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Sub>) {
   return <ContextMenuPrimitive.Sub data-slot="context-menu-sub" {...props} />
 }
 
 function ContextMenuRadioGroup({
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.RadioGroup>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.RadioGroup>) {
   return (
     <ContextMenuPrimitive.RadioGroup
       data-slot="context-menu-radio-group"
@@ -58,7 +58,7 @@ function ContextMenuSubTrigger({
   inset,
   children,
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.SubTrigger> & {
+}: React.ComponentProps<typeof ContextMenuPrimitive.SubTrigger> & {
   inset?: boolean
 }) {
   return (
@@ -80,7 +80,7 @@ function ContextMenuSubTrigger({
 function ContextMenuSubContent({
   className,
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.SubContent>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.SubContent>) {
   return (
     <ContextMenuPrimitive.SubContent
       data-slot="context-menu-sub-content"
@@ -96,7 +96,7 @@ function ContextMenuSubContent({
 function ContextMenuContent({
   className,
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Content>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Content>) {
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
@@ -116,7 +116,7 @@ function ContextMenuItem({
   inset,
   variant = 'default',
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Item> & {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Item> & {
   inset?: boolean
   variant?: 'default' | 'destructive'
 }) {
@@ -139,7 +139,7 @@ function ContextMenuCheckboxItem({
   children,
   checked,
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.CheckboxItem>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.CheckboxItem>) {
   return (
     <ContextMenuPrimitive.CheckboxItem
       data-slot="context-menu-checkbox-item"
@@ -164,7 +164,7 @@ function ContextMenuRadioItem({
   className,
   children,
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.RadioItem>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.RadioItem>) {
   return (
     <ContextMenuPrimitive.RadioItem
       data-slot="context-menu-radio-item"
@@ -188,7 +188,7 @@ function ContextMenuLabel({
   className,
   inset,
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Label> & {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Label> & {
   inset?: boolean
 }) {
   return (
@@ -207,7 +207,7 @@ function ContextMenuLabel({
 function ContextMenuSeparator({
   className,
   ...props
-}: vue.ComponentProps<typeof ContextMenuPrimitive.Separator>) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Separator>) {
   return (
     <ContextMenuPrimitive.Separator
       data-slot="context-menu-separator"
@@ -220,7 +220,7 @@ function ContextMenuSeparator({
 function ContextMenuShortcut({
   className,
   ...props
-}: vue.ComponentProps<'span'>) {
+}: React.ComponentProps<'span'>) {
   return (
     <span
       data-slot="context-menu-shortcut"

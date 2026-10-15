@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 
-function InputGroup({ className, ...props }: vue.ComponentProps<'div'>) {
+function InputGroup({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="input-group"
@@ -60,7 +60,7 @@ function InputGroupAddon({
   className,
   align = 'inline-start',
   ...props
-}: vue.ComponentProps<'div'> & VariantProps<typeof inputGroupAddonVariants>) {
+}: React.ComponentProps<'div'> & VariantProps<typeof inputGroupAddonVariants>) {
   return (
     <div
       role="group"
@@ -102,7 +102,7 @@ function InputGroupButton({
   variant = 'ghost',
   size = 'xs',
   ...props
-}: Omit<vue.ComponentProps<typeof Button>, 'size'> &
+}: Omit<React.ComponentProps<typeof Button>, 'size'> &
   VariantProps<typeof inputGroupButtonVariants>) {
   return (
     <Button
@@ -115,7 +115,7 @@ function InputGroupButton({
   )
 }
 
-function InputGroupText({ className, ...props }: vue.ComponentProps<'span'>) {
+function InputGroupText({ className, ...props }: React.ComponentProps<'span'>) {
   return (
     <span
       className={cn(
@@ -130,7 +130,7 @@ function InputGroupText({ className, ...props }: vue.ComponentProps<'span'>) {
 function InputGroupInput({
   className,
   ...props
-}: vue.ComponentProps<'input'>) {
+}: React.ComponentProps<'input'>) {
   return (
     <Input
       data-slot="input-group-control"
@@ -146,7 +146,7 @@ function InputGroupInput({
 function InputGroupTextarea({
   className,
   ...props
-}: vue.ComponentProps<'textarea'>) {
+}: React.ComponentProps<'textarea'>) {
   return (
     <Textarea
       data-slot="input-group-control"

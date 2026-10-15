@@ -250,3 +250,13 @@
   .project-metal { background-image: none; }
 }
 }
+
+/* ─── Oblea: punto que parpadea (grabando) ──────────── */
+@keyframes rec {
+  50% { opacity: 0.15; }
+}
+.rec { animation: rec 1.4s steps(1) infinite; }
+.rec-fast { animation: rec 0.25s steps(1) 6; }
+@media (prefers-reduced-motion: reduce) {
+  .rec, .rec-fast { animation: none !important; }
+}

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 function Checkbox({
   className,
   ...props
-}: vue.ComponentProps<typeof CheckboxPrimitive.Root>) {
+}: React.ComponentProps<typeof CheckboxPrimitive.Root>) {
   return (
     <CheckboxPrimitive.Root
       data-slot="checkbox"
