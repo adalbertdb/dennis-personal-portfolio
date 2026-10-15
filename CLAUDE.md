@@ -5,16 +5,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start dev server (Next.js)
-npm run build    # Production build
-npm run lint     # ESLint check
+pnpm dev        # Start dev server (Next.js)
+pnpm build      # Production build
+pnpm lint       # ESLint check
 ```
 
 No test suite configured.
 
 ## Architecture
 
-Single-page portfolio built with **Next.js** + **Vue 19** (JSX: `vue-jsx`). The entire site renders from `app/page.tsx` as a vertical stack of section components.
+Single-page portfolio built with **Next.js 15** + **React 19**. The entire site renders from `app/page.tsx` as a vertical stack of section components.
 
 **Section order in `app/page.tsx`:**
 ```
@@ -23,8 +23,8 @@ Navbar → HeroSection → ProjectsSection → SkillsSection → ContactSection 
 
 **Component layers:**
 - `components/*.tsx` — portfolio sections (business content)
-- `components/ui/` — shadcn-based primitives built on Radix UI Vue bindings (do not modify unless you know what you're doing)
-- `components/theme-provider.tsx` — wraps `next-themes` for dark/light mode
+- `components/ui/` — stock shadcn primitives on Radix UI (React) (do not modify unless you know what you're doing)
+- `components/theme-provider.tsx` — `next-themes` wrapper, currently unused: the theme follows `prefers-color-scheme` in `app/globals.css`
 
 ## Styling
 
@@ -34,7 +34,9 @@ Path alias: `@/` → project root.
 
 ## Key Constraints
 
-- **Vue JSX**, not React JSX. `tsconfig.json` sets `"jsx": "vue-jsx"`. Imports use Vue hooks and primitives, not React ones.
-- Icons: **Lucide Vue** (`lucide-vue-next`)
-- Forms: **Vue Hook Form** + **Zod**
-- This project was bootstrapped from **v0.app** — the UI components in `components/ui/` follow shadcn patterns but adapted for Vue.
+- **React 19**, standard JSX (`"jsx": "preserve"`). Package manager is **pnpm**.
+- Sections are client components because they read copy from `useLanguage()` (`lib/use-language.tsx`, strings in `lib/translations.ts`, ES/EN).
+- Projects come from GitHub GraphQL (`lib/github.ts`) and need `GITHUB_TOKEN`; without it the list renders empty.
+- Icons: `lucide-react` is only used inside `components/ui/`. The design system has no icon set, so sections use mono glyphs (`↗`, `→`).
+- Forms: `react-hook-form` + `zod` are installed (used only by `components/ui/form.tsx`).
+- Bootstrapped from **v0.app**; `components/ui/` are shadcn components.

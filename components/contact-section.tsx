@@ -46,7 +46,6 @@ export function ContactSection() {
                 {label} ↗
               </a>
             ))}
-            <span className="t-data text-on-steel-muted">{t.contact.reply}</span>
           </div>
         </div>
       </div>

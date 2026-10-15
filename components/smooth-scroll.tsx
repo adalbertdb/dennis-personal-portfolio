@@ -3,6 +3,11 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+let current: Lenis | undefined;
+
+/** La instancia activa de Lenis (no hay con prefers-reduced-motion), para quien necesite pararla o scrollear con ella. */
+export const getLenis = () => current;
+
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -13,6 +18,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       touchMultiplier: 1.5,
       infinite: false,
     });
+    current = lenis;
 
     let id: number;
     function raf(time: number) {
@@ -39,6 +45,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     return () => {
       cancelAnimationFrame(id);
       lenis.destroy();
+      current = undefined;
       document.removeEventListener("click", handleClick);
     };
   }, []);

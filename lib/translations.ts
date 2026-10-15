@@ -5,7 +5,7 @@ export const translations = {
     },
     hero: {
       role: "Full-stack developer",
-      line: "I build apps with the person using them in mind: clear, fast, frictionless interfaces on top of code that holds up. From the backend to the last pixel. Looking for a team.",
+      line: "I build apps with the person using them in mind: clear, fast, frictionless interfaces on top of code that holds up. From the backend to the last pixel.",
       btnWork: "See work",
       btnContact: "Write to me",
       spec: [
@@ -29,7 +29,6 @@ export const translations = {
     },
     contact: {
       title: "Let's talk",
-      reply: "I reply fast.",
     },
   },
   es: {
@@ -38,7 +37,7 @@ export const translations = {
     },
     hero: {
       role: "Desarrollador full-stack",
-      line: "Construyo apps pensando primero en quien las va a usar: interfaces claras, rápidas y sin fricción, sobre un código que aguanta. Del backend al último píxel. Busco equipo.",
+      line: "Construyo apps pensando primero en quien las va a usar: interfaces claras, rápidas y sin fricción, sobre un código que aguanta. Del backend al último píxel.",
       btnWork: "Ver trabajo",
       btnContact: "Escríbeme",
       spec: [
@@ -62,7 +61,6 @@ export const translations = {
     },
     contact: {
       title: "Hablemos",
-      reply: "Respondo rápido.",
     },
   },
 } as const
